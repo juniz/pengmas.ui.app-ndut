@@ -190,13 +190,15 @@ class _TaskKomunikasiPageState extends State<TaskKomunikasiPage> {
                     print(widget.tugas.id);
                     //navigateToMateriDetailPage(context, materi[pos]);
                     saveData();
+                    context.bloc<PageBloc>().add(GoToStudyCasePage());
+                    /*
                     if (widget.tugas.id == 1 ||
                         widget.tugas.id == 3 ||
                         widget.tugas.id == 6) {
                       context.bloc<PageBloc>().add(GoToStudyCasePage());
                     } else {
-                      //context.bloc<PageBloc>().add(GoToKomunikasiPage());
-                    }
+                      context.bloc<PageBloc>().add(GoToKomunikasiPage());
+                    }*/
                   },
                 ),
               ),

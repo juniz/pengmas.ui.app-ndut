@@ -197,6 +197,8 @@ class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
                   subtitle: Text(tugas[pos].createdAt),
                   onTap: () {
                     saveData(tugas[pos].id);
+                    context.bloc<PageBloc>().add(GoToStudyCasePage());
+                    /*
                     if (tugas[pos].id == 1 ||
                         tugas[pos].id == 3 ||
                         tugas[pos].id == 6) {
@@ -204,7 +206,7 @@ class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
                     } else {
                       //context.bloc<PageBloc>().add(GoToKomunikasiPage());
                     }
-                    /*
+                    
                     context.bloc<PageBloc>().add(
                         GoToTaskKomunikasiPage(tugas[pos], widget.category));
                     */

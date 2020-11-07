@@ -26,7 +26,7 @@ class _SignInPageState extends State<SignInPage> {
 
     // SERVER LOGIN API URL
     var url =
-        'http://timkecilproject-com.preview-domain.com/pengmas/public/index.php/api/penggunas';
+        'http://timkecilproject.com/pengmas/public/api/penggunas';
 
     // Store all data with Param Name.
     var data = {"email": email, "password": password};
