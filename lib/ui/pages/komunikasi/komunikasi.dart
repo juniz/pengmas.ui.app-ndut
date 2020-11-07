@@ -8,6 +8,66 @@ class KomunikasiPage extends StatefulWidget {
 class _KomunikasiPageState extends State<KomunikasiPage> {
   TextEditingController controller = TextEditingController();
 
+  String idTugas = '';
+  int idUser;
+  String nama;
+  @override
+  void initState() {
+    super.initState();
+    getId();
+  }
+
+  void getId() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      idTugas = prefs.getString('idTugas');
+      idUser = prefs.getInt("id");
+      nama = prefs.getString('nama');
+    });
+  }
+
+  getTugas() async {
+    print(idTugas);
+    var response = await http.get(
+        "http://timkecilproject.com/pengmas/public/api/tugas_komunikasis/$idTugas");
+    var body = jsonDecode(response.body);
+
+    return body;
+  }
+
+  void postKomunikasi() async {
+    String jawaban = controller.text;
+    var url =
+        'http://timkecilproject.com/pengmas/public/api/jawaban_komunikasis';
+    var data = {
+      "id_tugas": idTugas,
+      "id_pengguna": idUser.toString(),
+      "jawaban": jawaban,
+      "perasaan": nama
+    };
+    var response = await http.post(url, body: data);
+    if (response.statusCode == 200) {
+      context.bloc<PageBloc>().add(GoToSuksesPage());
+    } else {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: new Text("Error saat mengirim jawaban"),
+            actions: <Widget>[
+              FlatButton(
+                child: new Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -27,22 +87,35 @@ class _KomunikasiPageState extends State<KomunikasiPage> {
           Column(
             children: <Widget>[
               Container(
-                  height: 100,
-                  width: 250,
-                  margin:
-                      EdgeInsets.fromLTRB(defaultMargin, 25, defaultMargin, 25),
-                  decoration: BoxDecoration(
-                    color: accentColor1,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                        'Bagaimana perasaanmu setelah mendengarkan anak tanpa membalasnya',
-                        textAlign: TextAlign.justify,
-                        style: whiteTextFont.copyWith(
-                            fontSize: 16, fontWeight: FontWeight.w400)),
-                  )),
+                height: 100,
+                width: 280,
+                margin:
+                    EdgeInsets.fromLTRB(defaultMargin, 25, defaultMargin, 25),
+                decoration: BoxDecoration(
+                  color: accentColor1,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
+                child: FutureBuilder(
+                  future: getTugas(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    if (snapshot.hasData) {
+                      var tugas = snapshot.data["data"];
+                      print(tugas["tantangan"]);
+                      return Padding(
+                        padding: EdgeInsets.all(15),
+                        child: SingleChildScrollView(
+                          child: Text(tugas["tantangan"],
+                              textAlign: TextAlign.justify,
+                              style: whiteTextFont.copyWith(
+                                  fontSize: 14, fontWeight: FontWeight.w400)),
+                        ),
+                      );
+                    } else {
+                      return Center(child: CircularProgressIndicator());
+                    }
+                  },
+                ),
+              ),
               SizedBox(height: 25),
               Container(
                 child: Align(
@@ -97,7 +170,7 @@ class _KomunikasiPageState extends State<KomunikasiPage> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25)),
                   onPressed: () {
-                    context.bloc<PageBloc>().add(GoToSuksesPage());
+                    postKomunikasi();
                   },
                 ),
               ),

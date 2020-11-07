@@ -204,3 +204,13 @@ class OnTaskKomunikasiPage extends PageState {
   @override
   List<Object> get props => [tugas, category];
 }
+
+class OnStudyCasePage extends PageState {
+  @override
+  List<Object> get props => [];
+}
+
+class OnKomunikasiPage extends PageState {
+  @override
+  List<Object> get props => [];
+}

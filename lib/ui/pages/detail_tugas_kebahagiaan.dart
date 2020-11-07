@@ -1,31 +1,26 @@
 part of 'pages.dart';
 
-class DetailTugasKomunikasi extends StatefulWidget {
+class DetailTugasKebahaiaan extends StatefulWidget {
   TugasKomunikasi tugasKomunikasi;
   final Category category;
 
-  DetailTugasKomunikasi(this.category);
+  DetailTugasKebahaiaan(this.category);
 
   @override
-  _DetailTugasKomunikasiState createState() => _DetailTugasKomunikasiState();
+  _DetailTugasKebahaiaanState createState() => _DetailTugasKebahaiaanState();
 }
 
-class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
-  TugasKomunikasiBloc tugaskomunikasiBloc;
+class _DetailTugasKebahaiaanState extends State<DetailTugasKebahaiaan> {
+  TugasKebahagiaanBloc tugaskebahagiaanBloc;
   OnDetailTugasKomunikasi state;
-
-  void saveData(id) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString("idTugas", id.toString());
-  }
 
   @override
   void initState() {
     super.initState();
 
-    //int id = state.category.id;
-    tugaskomunikasiBloc = BlocProvider.of<TugasKomunikasiBloc>(context);
-    tugaskomunikasiBloc.add(FetchTugaskomunikasiEvent(widget.category.id));
+    //int id = stat.ctegory.id;
+    tugaskebahagiaanBloc = BlocProvider.of<TugasKebahagiaanBloc>(context);
+    tugaskebahagiaanBloc.add(FetchTugaskebahagiaanEvent(widget.category.id));
   }
 
   @override
@@ -111,10 +106,10 @@ class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
                             ),
                             color: accentColor4,
                           ),
-                          child: BlocListener<TugasKomunikasiBloc,
-                              TugaskomunikasiState>(
+                          child: BlocListener<TugasKebahagiaanBloc,
+                              TugaskebahagiaanState>(
                             listener: (context, state) {
-                              if (state is TugaskomunikasiErrorState) {
+                              if (state is TugaskebahagiaanErrorState) {
                                 Scaffold.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(state.message),
@@ -122,20 +117,21 @@ class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
                                 );
                               }
                             },
-                            child: BlocBuilder<TugasKomunikasiBloc,
-                                TugaskomunikasiState>(
+                            child: BlocBuilder<TugasKebahagiaanBloc,
+                                TugaskebahagiaanState>(
                               // ignore: missing_return
                               builder: (context, state) {
-                                if (state is TugaskomunikasiInitialState) {
+                                if (state is TugaskebahagiaanInitialState) {
                                   return buildLoading();
                                 } else if (state
-                                    is TugaskomunikasiLoadingState) {
+                                    is TugaskebahagiaanLoadingState) {
                                   return buildLoading();
                                 } else if (state
-                                    is TugaskomunikasiLoadedState) {
-                                  return buildTugasKomunikasiList(
-                                      state.tugaskomunikasi);
-                                } else if (state is TugaskomunikasiErrorState) {
+                                    is TugaskebahagiaanLoadedState) {
+                                  return buildTugasKebahagiaanList(
+                                      state.tugaskebahagiaan);
+                                } else if (state
+                                    is TugaskebahagiaanErrorState) {
                                   return buildErrorUi(state.message);
                                 }
                               },
@@ -160,7 +156,7 @@ class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
                               defaultMargin, 10, defaultMargin, 20),
                           child: Padding(
                             padding: const EdgeInsets.only(top: 10, bottom: 10),
-                            child: Text("Daftar Latihan Komunikasi",
+                            child: Text("Daftar Latihan",
                                 style: kTitleTextStyle.copyWith(
                                     color: Colors.white)),
                           ),
@@ -178,7 +174,7 @@ class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
     );
   }
 
-  Widget buildTugasKomunikasiList(List<Tugaskomunikasi> tugas) {
+  Widget buildTugasKebahagiaanList(List<Tugaskebahagiaan> tugas) {
     return ListView.builder(
         itemCount: tugas.length,
         itemBuilder: (ctx, pos) {
@@ -196,18 +192,16 @@ class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
                   title: Text(tugas[pos].nama, style: blackTextFont),
                   subtitle: Text(tugas[pos].createdAt),
                   onTap: () {
-                    saveData(tugas[pos].id);
-                    if (tugas[pos].id == 1 ||
-                        tugas[pos].id == 3 ||
-                        tugas[pos].id == 6) {
-                      context.bloc<PageBloc>().add(GoToStudyCasePage());
-                    } else {
-                      //context.bloc<PageBloc>().add(GoToKomunikasiPage());
-                    }
                     /*
                     context.bloc<PageBloc>().add(
                         GoToTaskKomunikasiPage(tugas[pos], widget.category));
-                    */
+                    navigateToMateriDetailPage(context, materi[pos]);
+                    if (widget.category.id == 1) {
+                      context.bloc<PageBloc>().add(
+                          GoToTaskMindfullPage(tugas[pos], widget.category));
+                    } else {
+                      context.bloc<PageBloc>().add(GoToByDoingPage());
+                    }*/
                   },
                 ),
               ),
@@ -265,7 +259,7 @@ class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
   }
 }
 
-class BestSellerClipper5 extends CustomClipper<Path> {
+class BestSellerClipper6 extends CustomClipper<Path> {
   @override
   getClip(Size size) {
     var path = Path();

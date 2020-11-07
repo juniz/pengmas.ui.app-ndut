@@ -70,6 +70,9 @@ class _WrapperState extends State<Wrapper> {
                                                                     is OnSuccessPage)
                                                                 ? SuccessPage()
                                                                 : (pageState
+                                                                    is OnSuksesPage)
+                                                                ? SuksesPage()
+                                                                : (pageState
                                                                         is OnQuestAnswerPage)
                                                                     ? QuestAnswerPage()
                                                                     : (pageState
@@ -80,6 +83,6 @@ class _WrapperState extends State<Wrapper> {
                                                                             ? RateOnlyPage()
                                                                             : (pageState is OnMoodOnlyPage)
                                                                                 ? MoodOnlyPage()
-                                                                                : (pageState is OnChoicesPage) ? ChoicesQuiz() : (pageState is OnQuestAnswerUPage) ? QuestAnswerUPage() : (pageState is OnSadarPageOne) ? SadarPageOne() : (pageState is OnMengamatiPageOne) ? MengamatiPageOne() : (pageState is OnPerspektifPageOne) ? PerspektifPageOne() : (pageState is OnKalenderPageOne) ? KalenderPageOne() : (pageState is OnKesimpulanPageOne) ? KesimpulanPage() : (pageState is OnTahukahPageOne) ? TahukahPage() : (pageState is OnSuaraPageOne) ? SuaraPageOne() : (pageState is OnPerkataanPageOne) ? PerkataanPage() : UserProfile());
+                                                                                : (pageState is OnKomunikasiPage) ? KomunikasiPage() : (pageState is OnStudyCasePage) ? StudyCase() : (pageState is OnChoicesPage) ? ChoicesQuiz() : (pageState is OnQuestAnswerUPage) ? QuestAnswerUPage() : (pageState is OnSadarPageOne) ? SadarPageOne() : (pageState is OnMengamatiPageOne) ? MengamatiPageOne() : (pageState is OnPerspektifPageOne) ? PerspektifPageOne() : (pageState is OnKalenderPageOne) ? KalenderPageOne() : (pageState is OnKesimpulanPageOne) ? KesimpulanPage() : (pageState is OnTahukahPageOne) ? TahukahPage() : (pageState is OnSuaraPageOne) ? SuaraPageOne() : (pageState is OnPerkataanPageOne) ? PerkataanPage() : UserProfile());
   }
 }

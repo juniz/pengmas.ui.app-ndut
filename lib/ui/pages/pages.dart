@@ -42,6 +42,7 @@ part 'main/task.dart';
 part 'main/product.dart';
 part 'detail_product.dart';
 
+part 'detail_tugas_kebahagiaan.dart';
 part 'detail_tugas_komunikasi.dart';
 part 'detail_tugas_mindfull.dart';
 part 'detail_materi_pwb.dart';

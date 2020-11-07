@@ -186,3 +186,13 @@ class GoToTaskKomunikasiPage extends PageEvent {
   @override
   List<Object> get props => [tugas, category];
 }
+
+class GoToStudyCasePage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+
+class GoToKomunikasiPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
