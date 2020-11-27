@@ -121,7 +121,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                                   hintText: 'Tulis jawabannya disini...',
                                 ),
                                 controller: jwb1,
-                                maxLength: 200,
+                                //maxLength: 200,
                               ),
                             ),
                             Padding(
@@ -178,7 +178,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                                   hintText: 'Tulis jawabannya disini...',
                                 ),
                                 controller: jwb2,
-                                maxLength: 200,
+                                //maxLength: 200,
                               ),
                             ),
                             Padding(
