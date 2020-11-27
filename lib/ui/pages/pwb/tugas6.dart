@@ -23,7 +23,7 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
     String j4 = finansial.text;
     String j5 = kesehatan.text;
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    var idTugas = prefs.getString('idTugas');
+    var idTugas = prefs.getInt('idTugas');
     var idUser = prefs.getInt("id");
     var tgs6 = prefs.getString("Tgs6");
     var jawaban =
@@ -46,7 +46,7 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
       var url =
           'https://timkecilproject.com/pengmas/public/api/jawaban_kebahagiaans';
       var data = {
-        "id_tugas": idTugas,
+        "id_tugas": idTugas.toString(),
         "id_pengguna": idUser.toString(),
         "jawaban": jawaban
       };

@@ -51,7 +51,7 @@ class Inti6Page extends StatelessWidget {
                 style: whiteTextFont.copyWith(fontSize: 16),
               ),
               onPressed: () {
-                context.bloc<PageBloc>().add(GoToPopUpPage());
+                context.bloc<PageBloc>().add(GoToSuksesPage());
               }),
         ),
         /*Row(
