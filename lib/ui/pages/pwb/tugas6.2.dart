@@ -17,7 +17,7 @@ class _Tugas6PageState extends State<Tugas6Page> {
   Widget build(BuildContext context) {
     return WillPopScope(
         onWillPop: () {
-          context.bloc<PageBloc>().add(GoToMainPage());
+          context.bloc<PageBloc>().add(GoToDetailTugasPwb());
 
           return;
         },
@@ -42,7 +42,9 @@ class _Tugas6PageState extends State<Tugas6Page> {
                           alignment: Alignment.centerLeft,
                           child: GestureDetector(
                             onTap: () {
-                              context.bloc<PageBloc>().add(GoToMainPage());
+                              context
+                                  .bloc<PageBloc>()
+                                  .add(GoToDetailTugasPwb());
                             },
                             child: Icon(Icons.arrow_back),
                           ),
