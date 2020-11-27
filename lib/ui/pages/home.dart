@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               Text("Kategori",
                   style: kTitleTextStyle.copyWith(fontWeight: FontWeight.w600)),
-              GestureDetector(
+              /*GestureDetector(
                 onTap: () {
                   context.bloc<PageBloc>().add(GoToGoalsPage());
                 },
@@ -78,7 +78,7 @@ class HomePage extends StatelessWidget {
                   "Riwayat",
                   style: kSubtitleTextSyule.copyWith(color: kBlueColor),
                 ),
-              ),
+              ),*/
             ],
           ),
           Expanded(
