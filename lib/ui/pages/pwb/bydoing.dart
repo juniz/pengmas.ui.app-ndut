@@ -86,7 +86,7 @@ class _PlayListState extends State<PlayList> {
                     // ),
                     Center(
                       child: Text(
-                        'Latihan:\nTenang',
+                        'Latihan',
                         textAlign: TextAlign.center,
                         style: blackTextFont.copyWith(fontSize: 20),
                       ),
@@ -109,7 +109,7 @@ class _PlayListState extends State<PlayList> {
                       SizedBox(height: 20),
                       Container(
                         child: Text(
-                          'Video: Bernafas - Intro',
+                          'Video',
                           style: blackTextFont.copyWith(
                               fontSize: 18, fontWeight: FontWeight.w600),
                         ),
@@ -126,10 +126,10 @@ class _PlayListState extends State<PlayList> {
                                 shrinkWrap: true,
                                 itemCount: video.length,
                                 itemBuilder: (context, index) {
+                                  String url = YoutubePlayer.convertUrlToId(
+                                      video[index]["audio"]);
                                   _liveController = YoutubePlayerController(
-                                    initialVideoId:
-                                        YoutubePlayer.convertUrlToId(
-                                            video[index]["audio"]),
+                                    initialVideoId: url,
                                     flags: YoutubePlayerFlags(
                                       autoPlay: false,
                                       isLive: true,
@@ -143,9 +143,11 @@ class _PlayListState extends State<PlayList> {
                                             right: defaultMargin),
                                         child: YoutubePlayer(
                                           controller: _liveController,
+                                          thumbnailUrl:
+                                              "https://img.youtube.com/vi/${url}/hqdefault.jpg",
                                         ),
                                       ),
-                                      Container(
+                                      /*Container(
                                         height: 150,
                                         width:
                                             (MediaQuery.of(context).size.width -
@@ -174,7 +176,7 @@ class _PlayListState extends State<PlayList> {
                                                         FontWeight.w400)),
                                           ),
                                         ),
-                                      ),
+                                      ),*/
                                     ],
                                   );
                                 });
