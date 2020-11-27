@@ -39,11 +39,11 @@ class Inti2Page extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25)),
               child: Text(
-                "Beranda",
+                "Menu Awal",
                 style: whiteTextFont.copyWith(fontSize: 16),
               ),
               onPressed: () {
-                context.bloc<PageBloc>().add(GoToMainPage());
+                context.bloc<PageBloc>().add(GoToTugas6Page());
               }),
         ),
         /*Row(
