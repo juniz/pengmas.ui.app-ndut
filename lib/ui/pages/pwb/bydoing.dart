@@ -18,7 +18,7 @@ class PlayList extends StatefulWidget {
 }
 
 class _PlayListState extends State<PlayList> {
-  String liveVideo = "https://www.youtube.com/watch?v=z-IR48Mb3W0";
+  String liveVideo = "https://www.youtube.com/watch?v=dsp45WWmVqA";
 
   YoutubePlayerController _liveController;
 
