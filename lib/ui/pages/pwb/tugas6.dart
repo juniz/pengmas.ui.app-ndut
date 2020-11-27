@@ -84,7 +84,7 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        context.bloc<PageBloc>().add(GoToNoteHomePage());
+        context.bloc<PageBloc>().add(GoToTugas6Page());
 
         return;
       },

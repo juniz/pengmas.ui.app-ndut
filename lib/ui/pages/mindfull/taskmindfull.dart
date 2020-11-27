@@ -98,8 +98,8 @@ class _TaskMindfullPageState extends State<TaskMindfullPage> {
                           decoration: BoxDecoration(
                               // borderRadius: BorderRadius.all(Radius.circular(20)),
                               image: DecorationImage(
-                                  image: NetworkImage(
-                                      "https://images.unsplash.com/photo-1522621032211-ac0031dfbddc?ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80"),
+                                  image: AssetImage(
+                                      "assets/images/taskmindfull.jpeg"),
                                   fit: BoxFit.cover)),
                         ),
                         Container(
@@ -118,7 +118,7 @@ class _TaskMindfullPageState extends State<TaskMindfullPage> {
                             children: <Widget>[
                               Center(
                                 child: Text(
-                                  nama,
+                                  nama ?? "",
                                   maxLines: 2,
                                   style: whiteTextFont.copyWith(
                                       fontSize: 16,
