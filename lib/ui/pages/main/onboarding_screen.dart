@@ -75,8 +75,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 image: AssetImage(
                                   'assets/images/onboarding0.png',
                                 ),
-                                height: 300.0,
-                                width: 300.0,
+                                height: 250.0,
+                                width: 250.0,
                               )),
                               SizedBox(height: 15.0),
                               Text(
@@ -121,8 +121,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 image: AssetImage(
                                   'assets/images/onboarding1.png',
                                 ),
-                                height: 300.0,
-                                width: 300.0,
+                                height: 250.0,
+                                width: 250.0,
                               )),
                               SizedBox(height: 15.0),
                               Text(
@@ -133,10 +133,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     height: 1.5),
                               ),
                               SizedBox(height: 15.0),
-                              Text(
+                              /*Text(
                                 'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
                                 style: purpleTextFont.copyWith(fontSize: 16),
-                              ),
+                              ),*/
                               SizedBox(height: 15.0),
                               Container(
                                   alignment: Alignment.center,
@@ -167,8 +167,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 image: AssetImage(
                                   'assets/images/onboarding2.png',
                                 ),
-                                height: 300.0,
-                                width: 300.0,
+                                height: 250.0,
+                                width: 250.0,
                               )),
                               SizedBox(height: 15.0),
                               Text(
@@ -179,12 +179,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     height: 1.5),
                               ),
                               SizedBox(height: 15.0),
-                              Text(
+                              /*Text(
                                 'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
                                 style: purpleTextFont.copyWith(
                                   fontSize: 16,
                                 ),
-                              ),
+                              ),*/
                               SizedBox(height: 15.0),
                             ],
                           ),

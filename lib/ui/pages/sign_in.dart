@@ -88,9 +88,6 @@ class _SignInPageState extends State<SignInPage> {
     }
   }
 
-  // final String assetName = "assets/images/newpack/7 SCENE.svg";
-  // final Widget svg = SvgPicture.asset(assetName, semanticsLabel: 'Image Sign In');
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
