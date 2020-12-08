@@ -219,6 +219,11 @@ class OnSuksesPage extends PageState {
   List<Object> get props => [];
 }
 
+class OnSukses2Page extends PageState {
+  @override
+  List<Object> get props => [];
+}
+
 class OnTaskKomunikasiPage extends PageState {
   final Category category;
   final Tugaskomunikasi tugas;

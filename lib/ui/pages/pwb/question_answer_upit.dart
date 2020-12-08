@@ -5,8 +5,8 @@ class QuestAnswerUPage extends StatefulWidget {
   Category category;
 
   final List<String> mood = [
-    "Susi",
-    "Tuti",
+    "Ibu Susi",
+    "Ibu Tuti",
   ];
 
   @override

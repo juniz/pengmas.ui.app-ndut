@@ -88,6 +88,7 @@ class PenjelasanTantangan4Page extends StatelessWidget {
                     style: whiteTextFont.copyWith(fontSize: 16),
                   ),
                   onPressed: () {
+                    //context.bloc<PageBloc>().add(GoToInti4Page());
                     context.bloc<PageBloc>().add(GoToQuestChoicesPage());
                   }),
             ),

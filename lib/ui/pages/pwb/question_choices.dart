@@ -48,7 +48,7 @@ class _QuestChoicesPageState extends State<QuestChoicesPage> {
     };
     var response = await http.post(url, body: data);
     if (response.statusCode == 200) {
-      context.bloc<PageBloc>().add(GoToSuksesPage());
+      context.bloc<PageBloc>().add(GoToInti4Page());
     } else {
       showDialog(
         context: context,

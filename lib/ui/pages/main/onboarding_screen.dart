@@ -7,8 +7,8 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final int _numPages = 3;
-  final PageController _pageController = PageController(initialPage: 0);
-  int _currentPage = 0;
+  final PageController _pageController = PageController(initialPage: 3);
+  int _currentPage = 2;
 
   List<Widget> _buildPageIndicator() {
     List<Widget> list = [];
@@ -93,8 +93,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               ),
                               SizedBox(height: 15.0),
                               Container(
-                                  alignment: Alignment.center,
-                                  child: FlatButton(
+                                alignment: Alignment.center,
+                                /*child: FlatButton(
                                       onPressed: () {
                                         _pageController.nextPage(
                                             duration:
@@ -107,7 +107,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                             color: accentColor1,
                                             fontSize: 18.0,
                                             fontWeight: FontWeight.w600),
-                                      ))),
+                                      ))*/
+                              ),
                             ],
                           ),
                         ),
@@ -126,11 +127,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               )),
                               SizedBox(height: 15.0),
                               Text(
-                                'Live your life smarter\nwith us!',
+                                'Hallo... \nTerima kasih sudah membuka aplikasi pengmas ini',
                                 style: purpleTextFont.copyWith(
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold,
                                     height: 1.5),
+                              ),
+                              SizedBox(height: 15.0),
+                              Text(
+                                'Yuk langsung buka aplikasinya',
+                                style: purpleTextFont.copyWith(fontSize: 16),
                               ),
                               SizedBox(height: 15.0),
                               /*Text(
@@ -172,11 +178,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               )),
                               SizedBox(height: 15.0),
                               Text(
-                                'Get a new experience\nof imagination',
+                                'Hallo... \nTerima kasih sudah membuka aplikasi pengmas ini',
                                 style: purpleTextFont.copyWith(
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold,
                                     height: 1.5),
+                              ),
+                              SizedBox(height: 15.0),
+                              Text(
+                                'Yuk langsung buka aplikasinya',
+                                style: purpleTextFont.copyWith(fontSize: 16),
                               ),
                               SizedBox(height: 15.0),
                               /*Text(
@@ -192,10 +203,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ],
                     ),
                   ),
-                  Row(
+                  /*Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: _buildPageIndicator(),
-                  ),
+                  ),*/
                 ],
               ),
             ),

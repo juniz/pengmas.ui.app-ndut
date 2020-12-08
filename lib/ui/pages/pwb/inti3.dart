@@ -47,11 +47,11 @@ class Inti3Page extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25)),
               child: Text(
-                "Menu Awal",
+                "Lanjut",
                 style: whiteTextFont.copyWith(fontSize: 16),
               ),
               onPressed: () {
-                context.bloc<PageBloc>().add(GoToTugas6Page());
+                context.bloc<PageBloc>().add(GoToSukses2Page());
               }),
         ),
         /*Row(

@@ -102,7 +102,7 @@ class _ChoicesQuiz1State extends State<ChoicesQuiz1> {
                   ),
                   Center(
                     child: Text(
-                      'Latihan:\nTenang',
+                      'Pilih 3 pilihan dari 12 pilihan',
                       textAlign: TextAlign.center,
                       style: blackTextFont.copyWith(fontSize: 20),
                     ),

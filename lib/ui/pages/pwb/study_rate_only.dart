@@ -8,7 +8,7 @@ class StudyRateOnlyPage extends StatefulWidget {
 }
 
 class _StudyRateOnlyPageState extends State<StudyRateOnlyPage> {
-  var myFeedbackText = "SANGAT BURUK";
+  var myFeedbackText = "SANGAT TIDAK SERIUS";
   var sliderValue = 0.0;
   IconData myFeedback = FontAwesomeIcons.sadTear;
   Color myFeedbackColor = mainColor;

@@ -8,7 +8,7 @@ class RateOnlyPage extends StatefulWidget {
 }
 
 class _RateOnlyPageState extends State<RateOnlyPage> {
-  var myFeedbackText = "SANGAT BURUK";
+  var myFeedbackText = "SANGAT TIDAK PUAS";
   var sliderValue = 0.0;
   IconData myFeedback = FontAwesomeIcons.sadTear;
   Color myFeedbackColor = mainColor;
@@ -49,7 +49,7 @@ class _RateOnlyPageState extends State<RateOnlyPage> {
     var response = await http.post(url, body: data);
     if (response.statusCode == 200) {
       setDone(namaTugas);
-      context.bloc<PageBloc>().add(GoToInti1Page());
+      context.bloc<PageBloc>().add(GoToInti5Page());
     } else {
       showDialog(
         context: context,
@@ -94,7 +94,7 @@ class _RateOnlyPageState extends State<RateOnlyPage> {
                     children: <Widget>[
                       Center(
                         child: Text(
-                          "Bagaimana perasaanmu saat ini ?",
+                          "Setelah melihat kekurangan dan kelebihan anda,\n Seberapa puas anda dengan diri anda?",
                           textAlign: TextAlign.center,
                           style: purpleTextFont.copyWith(fontSize: 16),
                         ),
@@ -124,7 +124,7 @@ class _RateOnlyPageState extends State<RateOnlyPage> {
                             shadowColor: Color(0x802196F3),
                             child: Container(
                                 width: 200.0,
-                                height: 280.0,
+                                height: 230.0,
                                 child: Column(
                                   children: <Widget>[
                                     Padding(
@@ -164,35 +164,36 @@ class _RateOnlyPageState extends State<RateOnlyPage> {
                                                 myFeedback =
                                                     FontAwesomeIcons.sadTear;
                                                 myFeedbackColor = Colors.red;
-                                                myFeedbackText = "SANGAT BURUK";
+                                                myFeedbackText =
+                                                    "SANGAT TIDAK PUAS";
                                               }
                                               if (sliderValue >= 1.1 &&
                                                   sliderValue <= 2.0) {
                                                 myFeedback =
                                                     FontAwesomeIcons.frown;
                                                 myFeedbackColor = Colors.yellow;
-                                                myFeedbackText = "BURUK";
+                                                myFeedbackText = "TIDAK PUAS";
                                               }
                                               if (sliderValue >= 2.1 &&
                                                   sliderValue <= 3.0) {
                                                 myFeedback =
                                                     FontAwesomeIcons.meh;
                                                 myFeedbackColor = Colors.amber;
-                                                myFeedbackText = "BIASA";
+                                                myFeedbackText = "CUKUP PUAS";
                                               }
                                               if (sliderValue >= 3.1 &&
                                                   sliderValue <= 4.0) {
                                                 myFeedback =
                                                     FontAwesomeIcons.smile;
                                                 myFeedbackColor = mainColor;
-                                                myFeedbackText = "BAIK";
+                                                myFeedbackText = "PUAS";
                                               }
                                               if (sliderValue >= 4.1 &&
                                                   sliderValue <= 5.0) {
                                                 myFeedback =
                                                     FontAwesomeIcons.laugh;
                                                 myFeedbackColor = accentColor4;
-                                                myFeedbackText = "SANGAT BAIK";
+                                                myFeedbackText = "SANGAT PUAS";
                                               }
                                             });
                                           },
@@ -215,7 +216,7 @@ class _RateOnlyPageState extends State<RateOnlyPage> {
                                       child: Container(
                                           child: Align(
                                         alignment: Alignment.bottomCenter,
-                                        child: RaisedButton(
+                                        /*child: RaisedButton(
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   new BorderRadius.circular(
@@ -227,7 +228,7 @@ class _RateOnlyPageState extends State<RateOnlyPage> {
                                                 color: Color(0xffffffff)),
                                           ),
                                           onPressed: () {},
-                                        ),
+                                        ),*/
                                       )),
                                     ),
                                   ],

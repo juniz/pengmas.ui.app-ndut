@@ -75,6 +75,9 @@ class _WrapperState extends State<Wrapper> {
                                                                             is OnSuksesPage)
                                                                         ? SuccessPWBPage()
                                                                         : (pageState
+                                                                            is OnSukses2Page)
+                                                                        ? SuccessPWB2Page()
+                                                                        : (pageState
                                                                                 is OnTugas6Page)
                                                                             ? Tugas6Page()
                                                                             : (pageState is OnInputTujuanPage)

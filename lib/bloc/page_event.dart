@@ -203,6 +203,11 @@ class GoToSuksesPage extends PageEvent {
   List<Object> get props => [];
 }
 
+class GoToSukses2Page extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+
 class GoToTaskKomunikasiPage extends PageEvent {
   final Tugaskomunikasi tugas;
   final Category category;
