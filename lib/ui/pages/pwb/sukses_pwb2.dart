@@ -44,14 +44,14 @@ class SuccessPWB2Page extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25)),
               child: Text(
-                "Lihat Agenda",
+                "Menu Utama",
                 style: whiteTextFont.copyWith(fontSize: 16),
               ),
               onPressed: () {
-                context.bloc<PageBloc>().add(GoToPopUpPage());
+                context.bloc<PageBloc>().add(GoToMainPage());
               }),
         ),
-        Row(
+        /*Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
@@ -68,7 +68,7 @@ class SuccessPWB2Page extends StatelessWidget {
               ),
             )
           ],
-        ),
+        ),*/
       ],
     ));
   }

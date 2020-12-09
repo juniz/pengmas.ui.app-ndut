@@ -40,6 +40,7 @@ class _StudyChoicePart3PageState extends State<StudyChoicePart3Page> {
     };
     var response = await http.post(url, body: data);
     if (response.statusCode == 200) {
+      setDone(namaTugas);
       context.bloc<PageBloc>().add(GoToStudyRateOnlyPage());
     } else {
       showDialog(

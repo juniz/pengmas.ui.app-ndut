@@ -12,6 +12,16 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
   TextEditingController finansial = TextEditingController();
   TextEditingController kesehatan = TextEditingController();
   bool visible = false;
+  String namaTugas;
+  String tgs6;
+
+  void getTgs() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      tgs6 = prefs.getString('Tgs6');
+      namaTugas = prefs.getString('namaTugas');
+    });
+  }
 
   void postKebahagiaan() async {
     setState(() {
@@ -52,6 +62,7 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
       };
       var response = await http.post(url, body: data);
       if (response.statusCode == 200) {
+        setDone(namaTugas);
         setState(() {
           visible = false;
         });
@@ -81,6 +92,12 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    getTgs();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
@@ -98,6 +115,15 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
         ListView(children: <Widget>[
           Column(
             children: <Widget>[
+              SizedBox(height: 50),
+              Center(
+                child: Text(
+                  'Rancangan hidup anda pada \n $tgs6',
+                  textAlign: TextAlign.center,
+                  style: purpleTextFont.copyWith(fontSize: 16),
+                ),
+              ),
+              SizedBox(height: 0),
               Container(
                   height: 50,
                   width: 250,
