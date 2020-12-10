@@ -13,6 +13,7 @@ class _ChoicesQuiz1State extends State<ChoicesQuiz1> {
   int idTugas;
   int idUser;
   String nama;
+  String namaTugas;
   @override
   void initState() {
     super.initState();
@@ -25,6 +26,7 @@ class _ChoicesQuiz1State extends State<ChoicesQuiz1> {
       idTugas = prefs.getInt('idTugas');
       idUser = prefs.getInt("id");
       nama = prefs.getString('nama');
+      namaTugas = prefs.getString('namaTugas');
     });
   }
 
@@ -40,6 +42,7 @@ class _ChoicesQuiz1State extends State<ChoicesQuiz1> {
     };
     var response = await http.post(url, body: data);
     if (response.statusCode == 200) {
+      setDone(namaTugas);
       context.bloc<PageBloc>().add(GoToChoices2Page());
     } else {
       showDialog(

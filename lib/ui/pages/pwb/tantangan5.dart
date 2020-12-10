@@ -8,6 +8,14 @@ class Tantangan5Page extends StatefulWidget {
 class _Tantangan5PageState extends State<Tantangan5Page> {
   TextEditingController jwb1 = TextEditingController();
   TextEditingController jwb2 = TextEditingController();
+  TextEditingController jwb3 = TextEditingController();
+  TextEditingController jwb4 = TextEditingController();
+  TextEditingController jwb5 = TextEditingController();
+  TextEditingController jwb6 = TextEditingController();
+  TextEditingController jwb7 = TextEditingController();
+  TextEditingController jwb8 = TextEditingController();
+  TextEditingController jwb9 = TextEditingController();
+  TextEditingController jwb10 = TextEditingController();
 
   int idTugas;
   int idUser;
@@ -30,7 +38,17 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
   void postKebahagiaan() async {
     String j1 = jwb1.text;
     String j2 = jwb2.text;
-    var jawaban = "Kelebihan : $j1   Kekurangan : $j2";
+    String j3 = jwb2.text;
+    String j4 = jwb2.text;
+    String j5 = jwb2.text;
+    String j6 = jwb2.text;
+    String j7 = jwb2.text;
+    String j8 = jwb2.text;
+    String j9 = jwb2.text;
+    String j10 = jwb2.text;
+
+    var jawaban =
+        "Kelebihan : 1.$j1,2.$j2,3.$j3,4.$j4,5.$j5   Kekurangan : 1.$j6,2.$j7,3.$j8,4.$j9,5.$j10";
 
     var url =
         'https://timkecilproject.com/pengmas/public/api/jawaban_kebahagiaans';
@@ -101,11 +119,11 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                 child: Align(
                   child: Material(
                     color: Color(0xFFE4E4E4),
-                    elevation: 10.0,
-                    borderRadius: BorderRadius.circular(20.0),
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10.0),
                     shadowColor: Color(0x802196F3),
                     child: Container(
-                      height: 200,
+                      height: 50,
                       width: (MediaQuery.of(context).size.width -
                           2 * defaultMargin -
                           24),
@@ -114,20 +132,179 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.fromLTRB(
-                                  10, defaultMargin, 10, defaultMargin),
+                                  0, defaultMargin, 0, defaultMargin),
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: 'Tulis jawabannya disini...',
+                                  hintText: '1.',
                                 ),
                                 controller: jwb1,
-                                //maxLength: 200,
                               ),
                             ),
                             Padding(
                                 padding: const EdgeInsets.all(30),
                                 child: Text(
                                   jwb1.text,
+                                  style: kTitleTextStyle,
+                                )),
+                          ],
+                        ),
+                      ]),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25),
+              Container(
+                child: Align(
+                  child: Material(
+                    color: Color(0xFFE4E4E4),
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10.0),
+                    shadowColor: Color(0x802196F3),
+                    child: Container(
+                      height: 50,
+                      width: (MediaQuery.of(context).size.width -
+                          2 * defaultMargin -
+                          24),
+                      child: ListView(children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0, defaultMargin, 0, defaultMargin),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: '2.',
+                                ),
+                                controller: jwb2,
+                              ),
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.all(30),
+                                child: Text(
+                                  jwb2.text,
+                                  style: kTitleTextStyle,
+                                )),
+                          ],
+                        ),
+                      ]),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25),
+              Container(
+                child: Align(
+                  child: Material(
+                    color: Color(0xFFE4E4E4),
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10.0),
+                    shadowColor: Color(0x802196F3),
+                    child: Container(
+                      height: 50,
+                      width: (MediaQuery.of(context).size.width -
+                          2 * defaultMargin -
+                          24),
+                      child: ListView(children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0, defaultMargin, 0, defaultMargin),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: '3.',
+                                ),
+                                controller: jwb3,
+                              ),
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.all(30),
+                                child: Text(
+                                  jwb3.text,
+                                  style: kTitleTextStyle,
+                                )),
+                          ],
+                        ),
+                      ]),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25),
+              Container(
+                child: Align(
+                  child: Material(
+                    color: Color(0xFFE4E4E4),
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10.0),
+                    shadowColor: Color(0x802196F3),
+                    child: Container(
+                      height: 50,
+                      width: (MediaQuery.of(context).size.width -
+                          2 * defaultMargin -
+                          24),
+                      child: ListView(children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0, defaultMargin, 0, defaultMargin),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: '4.',
+                                ),
+                                controller: jwb4,
+                              ),
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.all(30),
+                                child: Text(
+                                  jwb4.text,
+                                  style: kTitleTextStyle,
+                                )),
+                          ],
+                        ),
+                      ]),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25),
+              Container(
+                child: Align(
+                  child: Material(
+                    color: Color(0xFFE4E4E4),
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10.0),
+                    shadowColor: Color(0x802196F3),
+                    child: Container(
+                      height: 50,
+                      width: (MediaQuery.of(context).size.width -
+                          2 * defaultMargin -
+                          24),
+                      child: ListView(children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0, defaultMargin, 0, defaultMargin),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: '5.',
+                                ),
+                                controller: jwb5,
+                              ),
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.all(30),
+                                child: Text(
+                                  jwb5.text,
                                   style: kTitleTextStyle,
                                 )),
                           ],
@@ -159,10 +336,10 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                   child: Material(
                     color: Color(0xFFE4E4E4),
                     elevation: 10.0,
-                    borderRadius: BorderRadius.circular(20.0),
+                    borderRadius: BorderRadius.circular(10.0),
                     shadowColor: Color(0x802196F3),
                     child: Container(
-                      height: 200,
+                      height: 50,
                       width: (MediaQuery.of(context).size.width -
                           2 * defaultMargin -
                           24),
@@ -171,20 +348,179 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.fromLTRB(
-                                  10, defaultMargin, 10, defaultMargin),
+                                  00, defaultMargin, 0, defaultMargin),
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: 'Tulis jawabannya disini...',
+                                  hintText: '1.',
                                 ),
-                                controller: jwb2,
-                                //maxLength: 200,
+                                controller: jwb6,
                               ),
                             ),
                             Padding(
                                 padding: const EdgeInsets.all(30),
                                 child: Text(
-                                  jwb2.text,
+                                  jwb6.text,
+                                  style: kTitleTextStyle,
+                                )),
+                          ],
+                        ),
+                      ]),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25),
+              Container(
+                child: Align(
+                  child: Material(
+                    color: Color(0xFFE4E4E4),
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10.0),
+                    shadowColor: Color(0x802196F3),
+                    child: Container(
+                      height: 50,
+                      width: (MediaQuery.of(context).size.width -
+                          2 * defaultMargin -
+                          24),
+                      child: ListView(children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0, defaultMargin, 0, defaultMargin),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: '2.',
+                                ),
+                                controller: jwb7,
+                              ),
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.all(30),
+                                child: Text(
+                                  jwb7.text,
+                                  style: kTitleTextStyle,
+                                )),
+                          ],
+                        ),
+                      ]),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25),
+              Container(
+                child: Align(
+                  child: Material(
+                    color: Color(0xFFE4E4E4),
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10.0),
+                    shadowColor: Color(0x802196F3),
+                    child: Container(
+                      height: 50,
+                      width: (MediaQuery.of(context).size.width -
+                          2 * defaultMargin -
+                          24),
+                      child: ListView(children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0, defaultMargin, 0, defaultMargin),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: '3.',
+                                ),
+                                controller: jwb8,
+                              ),
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.all(30),
+                                child: Text(
+                                  jwb8.text,
+                                  style: kTitleTextStyle,
+                                )),
+                          ],
+                        ),
+                      ]),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25),
+              Container(
+                child: Align(
+                  child: Material(
+                    color: Color(0xFFE4E4E4),
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10.0),
+                    shadowColor: Color(0x802196F3),
+                    child: Container(
+                      height: 50,
+                      width: (MediaQuery.of(context).size.width -
+                          2 * defaultMargin -
+                          24),
+                      child: ListView(children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0, defaultMargin, 0, defaultMargin),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: '4..',
+                                ),
+                                controller: jwb9,
+                              ),
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.all(30),
+                                child: Text(
+                                  jwb9.text,
+                                  style: kTitleTextStyle,
+                                )),
+                          ],
+                        ),
+                      ]),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25),
+              Container(
+                child: Align(
+                  child: Material(
+                    color: Color(0xFFE4E4E4),
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10.0),
+                    shadowColor: Color(0x802196F3),
+                    child: Container(
+                      height: 50,
+                      width: (MediaQuery.of(context).size.width -
+                          2 * defaultMargin -
+                          24),
+                      child: ListView(children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0, defaultMargin, 0, defaultMargin),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: '5.',
+                                ),
+                                controller: jwb10,
+                              ),
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.all(30),
+                                child: Text(
+                                  jwb10.text,
                                   style: kTitleTextStyle,
                                 )),
                           ],
@@ -209,7 +545,6 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                       borderRadius: BorderRadius.circular(25)),
                   onPressed: () {
                     postKebahagiaan();
-                    //context.bloc<PageBloc>().add(GoToRateOnlyPage());
                   },
                 ),
               ),

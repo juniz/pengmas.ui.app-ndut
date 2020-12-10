@@ -17,6 +17,7 @@ class _StudyRateOnlyPageState extends State<StudyRateOnlyPage> {
 
   int idTugas;
   int idUser;
+  String namaTugas;
   String nama;
   @override
   void initState() {
@@ -30,6 +31,7 @@ class _StudyRateOnlyPageState extends State<StudyRateOnlyPage> {
       idTugas = prefs.getInt('idTugas');
       idUser = prefs.getInt("id");
       nama = prefs.getString('nama');
+      namaTugas = prefs.getString('namaTugas');
     });
   }
 
@@ -46,6 +48,7 @@ class _StudyRateOnlyPageState extends State<StudyRateOnlyPage> {
     };
     var response = await http.post(url, body: data);
     if (response.statusCode == 200) {
+      setDone(namaTugas);
       context.bloc<PageBloc>().add(GoToInti1Page());
     } else {
       showDialog(
@@ -121,7 +124,7 @@ class _StudyRateOnlyPageState extends State<StudyRateOnlyPage> {
                             shadowColor: Color(0x802196F3),
                             child: Container(
                                 width: 200.0,
-                                height: 230.0,
+                                height: 250.0,
                                 child: Column(
                                   children: <Widget>[
                                     Padding(

@@ -17,7 +17,7 @@ List<Category> categories = categoriesData
 var categoriesData = [
   {
     "id": 1,
-    "name": "Mindfullness",
+    "name": "Mindfulness",
     'courses': 8,
     'image': "assets/images/newpack/10-SCENE.png"
   },

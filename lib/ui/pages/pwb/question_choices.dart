@@ -21,6 +21,7 @@ class _QuestChoicesPageState extends State<QuestChoicesPage> {
   int idTugas;
   int idUser;
   String nama;
+  String namaTugas;
   @override
   void initState() {
     super.initState();
@@ -33,6 +34,7 @@ class _QuestChoicesPageState extends State<QuestChoicesPage> {
       idTugas = prefs.getInt('idTugas');
       idUser = prefs.getInt("id");
       nama = prefs.getString('nama');
+      namaTugas = prefs.getString('namaTugas');
     });
   }
 
@@ -48,6 +50,7 @@ class _QuestChoicesPageState extends State<QuestChoicesPage> {
     };
     var response = await http.post(url, body: data);
     if (response.statusCode == 200) {
+      setDone(namaTugas);
       context.bloc<PageBloc>().add(GoToInti4Page());
     } else {
       showDialog(

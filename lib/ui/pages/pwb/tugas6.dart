@@ -67,6 +67,7 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
       };
       var response = await http.post(url, body: data);
       if (response.statusCode == 200) {
+        setDone(namaTugas);
         setState(() {
           visible = false;
         });
@@ -113,6 +114,15 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
         ListView(children: <Widget>[
           Column(
             children: <Widget>[
+              SizedBox(height: 50),
+              Center(
+                child: Text(
+                  'Rancangan hidup anda pada \n $tgs6',
+                  textAlign: TextAlign.center,
+                  style: purpleTextFont.copyWith(fontSize: 16),
+                ),
+              ),
+              SizedBox(height: 0),
               Container(
                   height: 50,
                   width: 250,
