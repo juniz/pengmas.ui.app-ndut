@@ -12,6 +12,21 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
   TextEditingController finansial = TextEditingController();
   TextEditingController kesehatan = TextEditingController();
   bool visible = false;
+  String nmtgs6 = '';
+
+  void setTgs6() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      nmtgs6 = prefs.getString("Tgs6");
+    });
+  }
+
+
+  @override
+  void initState() { 
+    super.initState();
+    
+  }
 
   void postKebahagiaan() async {
     setState(() {
@@ -98,6 +113,22 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
         ListView(children: <Widget>[
           Column(
             children: <Widget>[
+              Container(
+                  height: 50,
+                  width: 250,
+                  margin:
+                      EdgeInsets.fromLTRB(defaultMargin, 25, defaultMargin, 25),
+                  decoration: BoxDecoration(
+                    color: accentColor1,
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Text(nmtgs6,
+                        textAlign: TextAlign.center,
+                        style: whiteTextFont.copyWith(
+                            fontSize: 16, fontWeight: FontWeight.w400)),
+                  )),
               Container(
                   height: 50,
                   width: 250,
