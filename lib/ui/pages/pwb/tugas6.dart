@@ -12,20 +12,15 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
   TextEditingController finansial = TextEditingController();
   TextEditingController kesehatan = TextEditingController();
   bool visible = false;
-  String nmtgs6 = '';
+  String namaTugas;
+  String tgs6;
 
-  void setTgs6() async {
+  void getTgs() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      nmtgs6 = prefs.getString("Tgs6");
+      tgs6 = prefs.getString('Tgs6');
+      namaTugas = prefs.getString('namaTugas');
     });
-  }
-
-
-  @override
-  void initState() { 
-    super.initState();
-    
   }
 
   void postKebahagiaan() async {
@@ -97,6 +92,12 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    getTgs();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
@@ -123,22 +124,6 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
                 ),
               ),
               SizedBox(height: 0),
-              Container(
-                  height: 50,
-                  width: 250,
-                  margin:
-                      EdgeInsets.fromLTRB(defaultMargin, 25, defaultMargin, 25),
-                  decoration: BoxDecoration(
-                    color: accentColor1,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Text(nmtgs6,
-                        textAlign: TextAlign.center,
-                        style: whiteTextFont.copyWith(
-                            fontSize: 16, fontWeight: FontWeight.w400)),
-                  )),
               Container(
                   height: 50,
                   width: 250,

@@ -7,7 +7,7 @@ class StudyCase extends StatefulWidget {
 
 class _StudyCaseState extends State<StudyCase> {
   TextEditingController controller = TextEditingController();
-
+  List<String> _hasil = [];
   int id;
   String nama;
   String jawaban;
@@ -209,7 +209,13 @@ class _StudyCaseState extends State<StudyCase> {
                                                 onChanged: (bool value) {
                                                   setState(() {
                                                     if (_checked[index] ==
-                                                        false) {
+                                                            false &&
+                                                        _checked
+                                                                .where((item) =>
+                                                                    item ==
+                                                                    true)
+                                                                .length <
+                                                            1) {
                                                       _checked[index] = true;
                                                       jawaban = pilihan[index]
                                                           ["pilihan"];
