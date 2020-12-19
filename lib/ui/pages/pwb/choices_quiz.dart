@@ -8,7 +8,7 @@ class ChoicesQuiz extends StatefulWidget {
 }
 
 class _ChoicesQuizState extends State<ChoicesQuiz> {
-  List<String> _hasilCheck=[];
+  List<String> _hasilCheck = [];
   int idTugas;
   int idUser;
   String nama;
@@ -61,11 +61,15 @@ class _ChoicesQuizState extends State<ChoicesQuiz> {
   }
 
   final List<SimpleModel> _items = <SimpleModel>[
-    SimpleModel('1. Mengantar anak ke Rumah sakit karena pendarahan di kepala yang tidak berhenti', false),
-    SimpleModel('2. Membuat laporan kerja untuk di presentasikan di rapat keesokan harinya', false),
-    SimpleModel('3. Menyiapkan materi ujian/tugas yang harus dikumpulkan besok', false),
+    SimpleModel(
+        '1. Mengantar anak ke Rumah sakit karena pendarahan di kepala yang tidak berhenti',
+        false),
+    SimpleModel(
+        '2. Membuat laporan kerja untuk di presentasikan di rapat keesokan harinya',
+        false),
+    SimpleModel(
+        '3. Menyiapkan materi ujian/tugas yang harus dikumpulkan besok', false),
     SimpleModel('4. Beri contoh lain..', false),
-    
   ];
 
   @override
@@ -120,11 +124,9 @@ class _ChoicesQuizState extends State<ChoicesQuiz> {
                 SizedBox(height: 25),
                 _buildRadioButton(),
                 SizedBox(height: 50),
-                
                 SizedBox(
                   height: 10,
                 ),
-                
                 SizedBox(
                   height: 20,
                 ),
@@ -159,23 +161,23 @@ class _ChoicesQuizState extends State<ChoicesQuiz> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: _items
-            .map(
-              (SimpleModel item) => CheckboxListTile(
+          .map(
+            (SimpleModel item) => CheckboxListTile(
                 title: Text(item.title),
                 value: item.isChecked,
                 onChanged: (bool val) {
-                  setState((){ 
+                  setState(() {
                     item.isChecked = val;
-                    if(item.isChecked==true){
+                    if (item.isChecked == true) {
                       _hasilCheck.add(item.title);
-                    }else{
+                    } else {
                       _hasilCheck.remove(item.title);
                     }
                   });
-                }
-              ),
-            )
-            .toList(),
+                }),
+          )
+          .toList()
+            ..shuffle(),
     );
   }
 }

@@ -305,3 +305,23 @@ class GoToInputTujuanPage extends PageEvent {
   @override
   List<Object> get props => [];
 }
+
+class GoToChoicesKomPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+
+class GoToChoicesQuizKomPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+
+class GoToChoicesQuiz2KomPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+
+class GoToChoicesQuiz3KomPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}

@@ -8,7 +8,7 @@ class ChoicesQuiz2 extends StatefulWidget {
 }
 
 class _ChoicesQuiz2State extends State<ChoicesQuiz2> {
-  List<String> _hasilCheck=[];
+  List<String> _hasilCheck = [];
   String _selectedValue;
 
   int idTugas;
@@ -67,7 +67,6 @@ class _ChoicesQuiz2State extends State<ChoicesQuiz2> {
     SimpleModel('10. Menyediakan kue untuk arisan/acara keluarga.', false),
     SimpleModel('11. Belanja kudapan untuk keluarga.', false),
     SimpleModel('12. Beri contoh lain..', false),
-    
   ];
 
   @override
@@ -122,11 +121,9 @@ class _ChoicesQuiz2State extends State<ChoicesQuiz2> {
                 SizedBox(height: 25),
                 _buildRadioButton(),
                 SizedBox(height: 50),
-                
                 SizedBox(
                   height: 10,
                 ),
-                
                 SizedBox(
                   height: 20,
                 ),
@@ -161,23 +158,22 @@ class _ChoicesQuiz2State extends State<ChoicesQuiz2> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: _items
-            .map(
-              (SimpleModel item) => CheckboxListTile(
+          .map(
+            (SimpleModel item) => CheckboxListTile(
                 title: Text(item.title),
                 value: item.isChecked,
                 onChanged: (bool val) {
-                  setState((){ 
+                  setState(() {
                     item.isChecked = val;
-                    if(item.isChecked==true){
+                    if (item.isChecked == true) {
                       _hasilCheck.add(item.title);
-                    }else{
+                    } else {
                       _hasilCheck.remove(item.title);
                     }
                   });
-                }
-              ),
-            )
-            .toList(),
+                }),
+          )
+          .toList(),
     );
   }
 }

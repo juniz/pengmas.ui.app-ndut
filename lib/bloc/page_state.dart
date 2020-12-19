@@ -321,3 +321,23 @@ class OnInputTujuanPage extends PageState {
   @override
   List<Object> get props => [];
 }
+
+class OnChoicesKomPage extends PageState {
+  @override
+  List<Object> get props => [];
+}
+
+class OnChoicesQuizKomPage extends PageState {
+  @override
+  List<Object> get props => [];
+}
+
+class OnChoicesQuiz2KomPage extends PageState {
+  @override
+  List<Object> get props => [];
+}
+
+class OnChoicesQuiz3KomPage extends PageState {
+  @override
+  List<Object> get props => [];
+}
